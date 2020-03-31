@@ -1,0 +1,51 @@
+{
+	"language": "python3",
+	"name": "jk_invoke",
+	"version": "0.2020.3.31",
+	"meta": {
+		"description": "This python module provides a high level interface to provide a clean API for executing commands and reading and writing files transparently: It doesn't matter if you operate locally or remotely or as a regular user or as root via sudo.",
+		"keywords": [
+			"ssh"
+		],
+		"license": "Apache 2.0",
+		"development_status": "beta",
+		"authors": [
+			{
+				"name": "Jürgen Knauth",
+				"email": "pubsrc@binary-overflow.de"
+			}
+		],
+		"wiki": {
+			"page": "DevDocs:jk_invoke"
+		}
+	},
+	"repositories": [
+		{
+			"type": "github",
+			"user": "jkpubsrc",
+			"project": "python-module-jk-invoke",
+			"devon_publish": false
+		},
+		{
+			"type": "pypy",
+			"project": "jk_invoke",
+			"devon_publish": false
+		}
+	],
+	"source": {
+		"packages": [
+			"jk_invoke"
+		],
+		"extra_data_files": [
+		],
+		"extra_binary_files": [
+		]
+	},
+	"requirements": {
+		"python_packages": [
+		],
+		"python_packages_dev": [
+		]
+	}
+}
+
