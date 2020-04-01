@@ -8,7 +8,7 @@ This python module provides a high level interface to provide a clean API for ex
 
 Information about this module can be found here:
 
-* [github.org](https://github.com/jkpubsrc/....)
+* [github.org](https://github.com/jkpubsrc/python-module-jk-invoke)
 * [pypi.python.org](https://pypi.python.org/pypi/jk_invoke)
 
 Why this module?
@@ -77,7 +77,7 @@ An instance of `RemoteInvoker` will require these arguments:
 Example:
 
 ```python
-invoker = jk_invoke.LocalInvoker(
+invoker = jk_invoke.RemoteInvoker(
 	"localhost",
 	22,
 	"someuser",
