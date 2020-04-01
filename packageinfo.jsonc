@@ -1,7 +1,7 @@
 {
 	"language": "python3",
 	"name": "jk_invoke",
-	"version": "0.2020.3.31",
+	"version": "0.2020.4.1",
 	"meta": {
 		"description": "This python module provides a high level interface to provide a clean API for executing commands and reading and writing files transparently: It doesn't matter if you operate locally or remotely or as a regular user or as root via sudo.",
 		"keywords": [
@@ -43,8 +43,10 @@
 	},
 	"requirements": {
 		"python_packages": [
+			"jk_pwinput"
 		],
 		"python_packages_dev": [
+			"jk_json"
 		]
 	}
 }
