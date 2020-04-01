@@ -23,19 +23,23 @@ from .RemoteSudoInvoker import RemoteSudoInvoker
 
 class LocalInvoker(AbstractInvoker):
 
-	def __init__(self, passwordProvider, localSSHPort:int = None):
-		assert callable(passwordProvider)
-		if localSSHPort is None:
-			localSSHPort = self.__retrieveLocalSSHPortFromSSHCfg()
+	def __init__(self, passwordProvider = None, localSSHPort:int = None):
+		if passwordProvider is not None:
+			assert callable(passwordProvider)
+			if localSSHPort is None:
+				localSSHPort = self.__retrieveLocalSSHPortFromSSHCfg()
+			else:
+				assert isinstance(localSSHPort, int)
+
+			self.__userID = os.getuid()
+			self.__userName = pwd.getpwuid(self.__userID).pw_name
+			self.__groupID = os.getgid()
+			self.__groupName = grp.getgrgid(self.__groupID).gr_name
+
+			self.__cprov = SSHConnectionProvider("localhost", localSSHPort, self.__userName, passwordProvider)
+
 		else:
-			assert isinstance(localSSHPort, int)
-
-		self.__userID = os.getuid()
-		self.__userName = pwd.getpwuid(self.__userID).pw_name
-		self.__groupID = os.getgid()
-		self.__groupName = grp.getgrgid(self.__groupID).gr_name
-
-		self.__cprov = SSHConnectionProvider("localhost", localSSHPort, self.__userName, passwordProvider)
+			self.__cprov = None
 
 		self.__sudoInoker = None
 	#
@@ -90,6 +94,8 @@ class LocalInvoker(AbstractInvoker):
 
 	def sudo(self) -> AbstractInvoker:
 		if self.__sudoInoker is None:
+			if self.__cprov is None:
+				raise Exception("This invoker has no password provider and therefore does not support sudo!")
 			self.__sudoInoker = RemoteSudoInvoker(self.__cprov)
 		return self.__sudoInoker
 	#

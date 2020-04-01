@@ -1,7 +1,7 @@
 ﻿
 
 
-__version__ = "0.2020.4.1"
+__version__ = "0.2020.4.1.1"
 
 
 
@@ -12,7 +12,6 @@ from .CommandResult import CommandResult
 from .AbstractInvoker import AbstractInvoker
 from .LocalInvoker import LocalInvoker
 from .RemoteInvoker import RemoteInvoker
-
 
 
 
