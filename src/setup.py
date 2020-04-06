@@ -23,7 +23,7 @@ setup(
 		"License :: OSI Approved :: Apache Software License",
 	],
 	description = "This python module provides a high level interface to provide a clean API for executing commands and reading and writing files transparently: It doesn't matter if you operate locally or remotely or as a regular user or as root via sudo.",
-	download_url = "https://github.com/jkpubsrc/python-module-jk-invoke/tarball/0.2020.4.1.1",
+	download_url = "https://github.com/jkpubsrc/python-module-jk-invoke/tarball/0.2020.4.6",
 	include_package_data = False,
 	install_requires = [
 		"jk_pwdinput",
@@ -37,7 +37,7 @@ setup(
 		"jk_invoke",
 	],
 	url = "https://github.com/jkpubsrc/python-module-jk-invoke",
-	version = "0.2020.4.1.1",
+	version = "0.2020.4.6",
 	zip_safe = False,
 	long_description = readme(),
 	long_description_content_type="text/markdown",
